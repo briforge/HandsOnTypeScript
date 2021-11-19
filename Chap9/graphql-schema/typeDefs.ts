@@ -1,4 +1,4 @@
-import { gql } from "apollo-server-core";
+import { gql } from "apollo-server-express";
 
 const typeDefs = gql`
     type User {
@@ -16,6 +16,14 @@ const typeDefs = gql`
     type Query {
         getUser(id: ID): User
         getTodos: [Todo!]
+    }
+
+    type Mutation {
+        addTodo(title: String!, description: String): Todo
+    }
+
+    type Subscription{
+        newTodo: Todo!
     }
 `;
 
