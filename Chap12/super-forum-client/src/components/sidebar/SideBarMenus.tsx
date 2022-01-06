@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppState } from "../../store/AppState";
 import { UserProfileSetType } from "../../store/user/Reducer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons"
+import { faUser, faRegistered } from "@fortawesome/free-solid-svg-icons"
 
 
 const SideBarMenus = () => {
@@ -22,8 +22,14 @@ const SideBarMenus = () => {
     return (
         <React.Fragment>
             <ul>
-                <FontAwesomeIcon icon={faUser} />
-                    <span className="menu-name">{user?.userName}</span>
+                <li>
+                    <FontAwesomeIcon icon={faUser} />
+                        <span className="menu-name">{user?.userName}</span>
+                </li>
+                <li>
+                    <FontAwesomeIcon icon={faRegistered} />
+                    <span className="menu-name">register</span>
+                </li>
             </ul>
         </React.Fragment>
     );
